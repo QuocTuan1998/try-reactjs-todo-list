@@ -1,10 +1,12 @@
 import React from 'react';
-import FormContainer from "./FormContainer"
+import Header from "./Header"
+import MemeContainer from "./MemeContainer"
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <FormContainer />
+        <Header/>
+        <MemeContainer/>
       </div>
     )
   }
