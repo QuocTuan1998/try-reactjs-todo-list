@@ -1,27 +1,19 @@
 import React from "react"
 import { Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-import Navbar from "./components/Navbar"
-import ProductList from "./components/ProductList"
-import Details from "./components/Details"
-import Cart from "./components/cart/Cart"
-import Default from "./components/Default"
-import Modal from './components/Modal'
-
+import LanddingPage from './LanddingPage';
+import AppLayout from './AppLayout';
+import ProtectedRoute  from './protected.route';
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <Navbar />
+      <div className="mx-auto text-center text-capitalize">
+        <h1>hello react</h1>
         <Switch>
-          <Route path="/" exact component={ProductList} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/details" component={Details} />
-          <Route component={Default} />
+          <Route exact path="/" component={LanddingPage} />
+          <ProtectedRoute exact path="/app" component={AppLayout} />
         </Switch>
-        <Modal/>
-      </React.Fragment>
+      </div>
     )
   }
 }
